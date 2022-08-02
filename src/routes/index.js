@@ -1,8 +1,7 @@
 // Root Router - redirections to routes
 
 import express from 'express'
-import helloRouter from './HelloRouter'
-import { LogInfo } from '../utils/LogInfo'
+import helloRouter from './HelloRouter.js'
 
 // Server instance
 const server = express()
@@ -14,7 +13,7 @@ const rootRouter = express.Router()
 
 // GET: http://localhost:8000/api
 rootRouter.get('/', (req, res) => {
-  LogInfo('GET: http://localhost:8000/api')
+  console.log('GET: http://localhost:8000/api')
   res.send('Hello World! :)')
 })
 

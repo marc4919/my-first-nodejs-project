@@ -1,24 +1,17 @@
-const express = require('express')
-const dotenv = require('dotenv')
+import server from './src/server/index.js'
+import dotenv from 'dotenv'
 
 // Configuration .env file
 dotenv.config()
 
-// Create express APP
-const app = express()
 const port = process.env.PORT || 8000
 
-// Define the first Route of the APP
-app.get('/', (req, res) => {
-  res.send('Hello World! :)')
+// Execute server
+server.listen(port, () => {
+  console.log(`[SERVER ON]: Running on http://localhost:${port}/api`)
 })
 
-// Define the other Routes of the APP
-app.get('/hello', (req, res) => {
-  res.send('Welcome to this route')
-})
-
-// Execute APP and listen requests
-app.listen(port, () => {
-  console.log(`SERVER RUNNING at http://localhost:${port}`)
+// Error server
+server.on('error', (error) => {
+  console.log(`[SERVER ERROR]: ${error}`)
 })

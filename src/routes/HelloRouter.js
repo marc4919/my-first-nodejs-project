@@ -1,6 +1,5 @@
 import express from 'express'
-import { HelloController } from '../controller/HelloController'
-import { LogInfo } from '../utils/LogInfo'
+import { HelloController } from '../controller/HelloController.js'
 
 // Router from express
 const helloRouter = express.Router()
@@ -10,7 +9,7 @@ helloRouter.route('/')
   .get(async (req, res) => {
   // Obtain a Query param
     const name = req?.query?.name
-    LogInfo(`Query Param -> ${name}`)
+    console.log(`Query Param -> ${name}`)
     const controlador = new HelloController()
     // Obtain Response
     const response = await controlador.getMessage(name)
