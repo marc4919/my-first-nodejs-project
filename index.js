@@ -1,5 +1,5 @@
-const express = require('express');
-const dotenv = require('dotenv');
+const express = require('express')
+const dotenv = require('dotenv')
 
 // Configuration .env file
 dotenv.config()
@@ -21,4 +21,4 @@ app.get('/hello', (req, res) => {
 // Execute APP and listen requests
 app.listen(port, () => {
   console.log(`SERVER RUNNING at http://localhost:${port}`)
-}) 
+})
